@@ -10,8 +10,8 @@ public class steps {
 
     @Given("^I have open the browser$")
     public void openBrowser() throws InterruptedException {
-        //System.setProperty("webdriver.chrome.driver","Users/nirajkumar/Downloads/chromedriver.exe");
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver","/Users/nirajkumar/Downloads/chromedriver");
+        //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         //driver = new ChromeDriver();
         driver.manage().window().maximize();
