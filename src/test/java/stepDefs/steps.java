@@ -1,14 +1,18 @@
 package stepDefs;
 
 import io.cucumber.java.en.Given;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.logging.Logger;
 
 public class steps {
     WebDriver driver =null;
 
     @Given("I have open the browser")
     public void launchQAScript() {
+        Assert.fail("failed");
         System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://www.selenium.dev/");
