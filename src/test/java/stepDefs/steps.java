@@ -1,34 +1,27 @@
 package stepDefs;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.util.logging.Logger;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class steps {
-    WebDriver driver =null;
+    WebDriver driver;
+    String username = System.getenv("BROWSERSTACK_USERNAME");
+    String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+    String URL = "https://" + username + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub";
 
     @Given("I have open the browser")
     public void launchQAScript() {
-        Assert.fail("failed");
         System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://www.selenium.dev/");
 
     }
-
-
-    /*@Given("^I have open the browser$")
-    public void openBrowser() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","/Users/nirajkumar/Downloads/chromedriver");
-        //WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        //driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.amazon.com");
-        Thread.sleep(5000);
-    }*/
 }
-///Users/nirajkumar/Downloads/chromedriver.exe
