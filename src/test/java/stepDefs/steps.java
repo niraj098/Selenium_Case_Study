@@ -19,9 +19,24 @@ public class steps {
 
     @Given("I have open the browser")
     public void launchQAScript() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get("https://www.selenium.dev/");
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("os", "Windows");
+        caps.setCapability("os_version", "10");
+        caps.setCapability("browser", "Chrome");
+        caps.setCapability("browser_version", "80");
+        caps.setCapability("build", "1.0");
+        caps.setCapability("browserstack.debug", "true");
+        caps.setCapability("project", "Browserstack Demo");
+        caps.setCapability("name", "BS Test");
+        try {
+            WebDriver bs_driver = new RemoteWebDriver(new URL(URL), caps);
+            bs_driver.get("https://www.selenium.dev/");
+            String strTitle = bs_driver.getTitle();
+            Assert.assertEquals(strTitle, "SeleniumHQ Browser Automation");
+            bs_driver.quit();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
 
     }
 }
