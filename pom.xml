@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>Selenium_Case_Study</artifactId>
+    <groupId>com.qascript</groupId>
+    <artifactId>Selenium-Sample</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -15,7 +15,6 @@
         <poi.version>4.1.1</poi.version>
         <selenium.version>3.141.59</selenium.version>
     </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -90,12 +89,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.1.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.1.1</version>
         </dependency>
     </dependencies>
 
